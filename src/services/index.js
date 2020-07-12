@@ -53,7 +53,7 @@ module.exports.schedule = (req, res) => {
   }
 
   // create response
-  let response = { movies: result, profit: result.length };
+  let response = { movies: result, maximum_profit: result.length };
 
   // send response
   res.send(response);

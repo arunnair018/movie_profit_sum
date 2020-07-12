@@ -4,5 +4,8 @@ const service = require("../services");
 
 // Router
 module.exports = (app) => {
-  app.route("/").post(service.schedule);
+  // api endpoint for normal year
+  app.route("schedule/v1/year").post(service.schedule);
+  // api endpoint for leap year
+  app.route("schedule/v1/leapyear").post(service.scheduleLeap);
 };
