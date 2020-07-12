@@ -1,8 +1,8 @@
 " use strict";
 
-//const service = require("../services");
-const test = require("../services");
+const service = require("../services");
 
+// Router
 module.exports = (app) => {
-  app.route("/").get(test.schedule);
+  app.route("/").post(service.schedule);
 };
