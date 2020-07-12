@@ -15,38 +15,38 @@
 
 Returns final list of movies to select along with the maximum profit.
 
-- ##### URL
-      	* for  a non-leap year
-      	``/schedule/v1/year``
+##### URL
 
-      	* for a leap year
-      	``/schedule/v1/leapyear``
-- ##### Method
-      	POST
-- ##### Data Params
-      	``
-      	data = {
-      	"data" : [{
-      	"movie_name" : String,
-      	"start_date" : String,
-      	"end_date" : String
-      	}]
-      	}
-      	``
-- ##### Success Response
-      * Code: 200
-      Content: ``{
-      "movies": [
-  {
-  "movie_name": String,
-  "start_date": String,
-  "end_date": String
-  }
-  ],
-  "maximum_profit": Integer
-  }``
-- ##### Error Response
-- ##### Sample Call
+- for a non-leap year
+  `/schedule/v1/year`
+
+- for a leap year
+  `/schedule/v1/leapyear`
+
+##### Method
+
+    POST
+
+##### Data Params
+
+    ```
+    data = {
+    "data" : [{
+    "movie_name" : String,
+    "start_date" : String,
+    "end_date" : String
+    }]
+    }
+    ```
+
+##### Success Response
+
+    * Code: 200
+      Content: ``{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String } ],  "maximum_profit": Integer }``
+
+##### Error Response
+
+##### Sample Call
 
 ```javascript
 var axios = require("axios");
