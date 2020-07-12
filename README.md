@@ -25,11 +25,11 @@ Returns final list of movies to select along with the maximum profit.
 
 ##### Method
 
-    POST
+POST
 
 ##### Data Params
 
-    ```
+    ``
     data = {
     "data" : [{
     "movie_name" : String,
@@ -37,12 +37,12 @@ Returns final list of movies to select along with the maximum profit.
     "end_date" : String
     }]
     }
-    ```
+    ``
 
 ##### Success Response
 
-    * Code: 200
-      Content: ``{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String } ],  "maximum_profit": Integer }``
+- Code: 200
+  Content: `{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String } ], "maximum_profit": Integer }`
 
 ##### Error Response
 
