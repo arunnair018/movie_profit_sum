@@ -7,14 +7,19 @@ const routes = require("./src/routes");
 const app = express();
 const port = process.env.PORT || 5000;
 
-// middlewares
+// Middlewares
+
+// logs HTTP request
 app.use(morgan("tiny"));
+// enable cors request
 app.use(cors());
+// parse application/x-www-form-urlencoded
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
+// parse application/json
 app.use(bodyParser.json());
 
 // routes
