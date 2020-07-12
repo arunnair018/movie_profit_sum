@@ -29,7 +29,6 @@ POST
 
 ##### Data Params
 
-    ``
     data = {
     "data" : [{
     "movie_name" : String,
@@ -37,11 +36,10 @@ POST
     "end_date" : String
     }]
     }
-    ``
 
 ##### Success Response
 
-- Code: 200
+- Code: 200  
   Content: `{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String } ], "maximum_profit": Integer }`
 
 ##### Error Response
