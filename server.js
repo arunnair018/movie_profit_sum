@@ -3,6 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const routes = require("./src/routes");
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -21,6 +22,11 @@ app.use(
 );
 // parse application/json
 app.use(bodyParser.json());
+
+// welcome page
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname + "/index.html"));
+});
 
 // routes
 routes(app);

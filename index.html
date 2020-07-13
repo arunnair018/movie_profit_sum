@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kommunicate Assignment</title>
+    <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  </head>
+
+  <body class="stackedit">
+    <div class="stackedit__left">
+      <div class="stackedit__toc">
+        <ul>
+          <li>
+            <a href="#kommunicate-assignment">Kommunicate Assignment</a>
+            <ul>
+              <li><a href="#setupinstallations">Setup/Installations</a></li>
+              <li><a href="#running-the-setup">Running the setup</a></li>
+              <li><a href="#api-endpoints">API Endpoints</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="stackedit__right">
+      <div class="stackedit__html">
+        <h1 id="kommunicate-assignment">Kommunicate Assignment</h1>
+        <h2 id="setupinstallations">Setup/Installations</h2>
+        <ul>
+          <li>
+            Install <a href="https://nodejs.org/en/">nodejs 12.18.2 LTS</a>
+          </li>
+        </ul>
+        <h2 id="running-the-setup">Running the setup</h2>
+        <ul>
+          <li>
+            <p>Install dependencies using <code>npm install</code>.</p>
+          </li>
+          <li>
+            <p>Start server using <code>npm run dev</code>.</p>
+          </li>
+        </ul>
+        <h2 id="api-endpoints">API Endpoints</h2>
+        <h3 id="schedule-movies">Schedule Movies</h3>
+        <p>
+          Returns final list of movies to select along with the maximum profit.
+        </p>
+        <h5 id="url">URL</h5>
+        <ul>
+          <li>
+            live base url<br />
+            <code>https://movieapi018.herokuapp.com</code>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              for a non-leap year<br />
+              <code>/api/v1/schedule/year</code>
+            </p>
+          </li>
+          <li>
+            <p>
+              for a leap year<br />
+              <code>/api/v1/schedule/leapyear</code>
+            </p>
+          </li>
+        </ul>
+        <h5 id="method">Method</h5>
+        <p>POST</p>
+        <h5 id="data-params">Data Params</h5>
+        <pre><code>data = {
+	"data" : [{
+	"movie_name" : String,
+	"start_date" : String,
+	"end_date" : String
+	}]
+}
+</code></pre>
+        <h5 id="success-response">Success Response</h5>
+        <ul>
+          <li>
+            Code: 200<br />
+            Content:
+            <code
+              >{ "movies": [ { "movie_name": String, "start_date": String,
+              "end_date": String }], "maximum_profit": Integer }</code
+            >
+          </li>
+        </ul>
+        <h5 id="error-response">Error Response</h5>
+        <h5 id="sample-call">Sample Call</h5>
+        <pre
+          class="language-javascript"
+        ><code class="prism  language-javascript"><span class="token keyword">var</span>  myHeaders  <span class="token operator">=</span>  <span class="token keyword">new</span>  <span class="token class-name">Headers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myHeaders<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span>  <span class="token string">"application/json"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span>  raw  <span class="token operator">=</span>  JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+<span class="token punctuation">{</span> movie_name<span class="token punctuation">:</span>  <span class="token string">"Drive"</span><span class="token punctuation">,</span> start_date<span class="token punctuation">:</span>  <span class="token string">"1 jan"</span><span class="token punctuation">,</span> end_date<span class="token punctuation">:</span>  <span class="token string">"15 jan"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span> movie_name<span class="token punctuation">:</span>  <span class="token string">"brave"</span><span class="token punctuation">,</span> start_date<span class="token punctuation">:</span>  <span class="token string">"15 feb"</span><span class="token punctuation">,</span> end_date<span class="token punctuation">:</span>  <span class="token string">"15 jul"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span> movie_name<span class="token punctuation">:</span>  <span class="token string">"bala"</span><span class="token punctuation">,</span> start_date<span class="token punctuation">:</span>  <span class="token string">"15 jan"</span><span class="token punctuation">,</span> end_date<span class="token punctuation">:</span>  <span class="token string">"15 feb"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span> movie_name<span class="token punctuation">:</span>  <span class="token string">"rock"</span><span class="token punctuation">,</span> start_date<span class="token punctuation">:</span>  <span class="token string">"15 jul"</span><span class="token punctuation">,</span> end_date<span class="token punctuation">:</span>  <span class="token string">"15 aug"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span> movie_name<span class="token punctuation">:</span>  <span class="token string">"PolicyMaker"</span><span class="token punctuation">,</span> start_date<span class="token punctuation">:</span>  <span class="token string">"15 aug"</span><span class="token punctuation">,</span> end_date<span class="token punctuation">:</span>  <span class="token string">"10 nov"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span> movie_name<span class="token punctuation">:</span>  <span class="token string">"race"</span><span class="token punctuation">,</span> start_date<span class="token punctuation">:</span>  <span class="token string">"10 nov"</span><span class="token punctuation">,</span> end_date<span class="token punctuation">:</span>  <span class="token string">"31 dec"</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span>  requestOptions  <span class="token operator">=</span>  <span class="token punctuation">{</span>
+method<span class="token punctuation">:</span>  <span class="token string">"POST"</span><span class="token punctuation">,</span>
+headers<span class="token punctuation">:</span>  myHeaders<span class="token punctuation">,</span>
+body<span class="token punctuation">:</span>  raw<span class="token punctuation">,</span>
+redirect<span class="token punctuation">:</span>  <span class="token string">"follow"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://localhost:5000/schedule/v1/year"</span><span class="token punctuation">,</span>  requestOptions<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>  <span class="token operator">=&gt;</span>  response<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>  <span class="token operator">=&gt;</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>  <span class="token operator">=&gt;</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">,</span>  error<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+    </div>
+  </body>
+</html>
