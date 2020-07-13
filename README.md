@@ -63,10 +63,8 @@ POST
 ##### Sample Request
 
 ```javascript
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-var raw = JSON.stringify({
+var axios = require("axios");
+var data = JSON.stringify({
   data: [
     { movie_name: "Drive", start_date: "1 jan", end_date: "15 jan" },
     { movie_name: "brave", start_date: "15 feb", end_date: "15 jul" },
@@ -77,17 +75,22 @@ var raw = JSON.stringify({
   ],
 });
 
-var requestOptions = {
-  method: "POST",
-  headers: myHeaders,
-  body: raw,
-  redirect: "follow",
+var config = {
+  method: "post",
+  url: "https://movieapi018.herokuapp.com/api/v1/schedule/year",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  data: data,
 };
 
-fetch("http://localhost:5000/schedule/v1/year", requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.log("error", error));
+axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error.response.data);
+  });
 ```
 
 ##### Sample Response
