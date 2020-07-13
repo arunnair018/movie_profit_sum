@@ -48,6 +48,18 @@ POST
 
 ##### Error Response
 
+- Code: 422  
+  Content:
+  ```
+  {
+    "errors": [
+        {
+            "data[0].start_date": "Invalid value"
+        }
+    ]
+  }
+  ```
+
 ##### Sample Request
 
 ```javascript
