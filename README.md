@@ -40,15 +40,18 @@ POST
 ##### Success Response
 
 - Code: 200  
-  Content: `{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String } ], "maximum_profit": Integer }`
+  Content:
+  `{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String }], "maximum_profit": Integer }`
 
 ##### Error Response
 
 ##### Sample Call
 
 ```javascript
-var axios = require("axios");
-var data = JSON.stringify({
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
   data: [
     { movie_name: "Drive", start_date: "1 jan", end_date: "15 jan" },
     { movie_name: "brave", start_date: "15 feb", end_date: "15 jul" },
@@ -58,19 +61,16 @@ var data = JSON.stringify({
     { movie_name: "race", start_date: "10 nov", end_date: "31 dec" },
   ],
 });
-var config = {
-  method: "post",
-  url: "http://localhost:5000/schedule/v1/leapyear",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  data: data,
+
+var requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow",
 };
-axios(config)
-  .then(function (response) {
-    console.log(JSON.stringify(response.data));
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+
+fetch("http://localhost:5000/schedule/v1/year", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.log("error", error));
 ```
