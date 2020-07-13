@@ -13,5 +13,7 @@ module.exports = (app) => {
     .route("/api/v1/schedule/year")
     .post(userValidationRules(), validate, service.schedule);
   // api endpoint for leap year
-  app.route("/api/v1/schedule/leapyear").post(service.scheduleLeap);
+  app
+    .route("/api/v1/schedule/leapyear")
+    .post(userValidationRules(), validate, service.scheduleLeap);
 };
