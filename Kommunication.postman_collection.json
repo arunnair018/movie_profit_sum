@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "364b73b2-b5cb-45e6-b6b9-0be9fbe5340b",
+		"name": "Kommunication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc66443f-de96-4db9-a0ff-c8a46378c39c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":[ \r\n         {\r\n       \"movie_name\" : \"Drive\",\r\n        \"start_date\" : \"1 jan\",\r\n        \"end_date\" : \"15 jan\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"brave\",\r\n        \"start_date\" : \"15 feb\",\r\n        \"end_date\" : \"15 jul\"\r\n   },\r\n     {\r\n       \"movie_name\" : \"bala\",\r\n        \"start_date\" : \"15 jan\",\r\n        \"end_date\" : \"15 feb\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"rock\",\r\n        \"start_date\" : \"15 jul\",\r\n        \"end_date\" : \"15 aug\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"PolicyMaker\",\r\n        \"start_date\" : \"15 aug\",\r\n        \"end_date\" : \"10 nov\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"race\",\r\n        \"start_date\" : \"10 nov\",\r\n        \"end_date\" : \"31 dec\"\r\n   }]\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://movieapi018.herokuapp.com/api/v1/schedule/year",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":[ \r\n         {\r\n       \"movie_name\" : \"Drive\",\r\n        \"start_date\" : \"1 jan\",\r\n        \"end_date\" : \"15 jan\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"brave\",\r\n        \"start_date\" : \"15 feb\",\r\n        \"end_date\" : \"15 jul\"\r\n   },\r\n     {\r\n       \"movie_name\" : \"bala\",\r\n        \"start_date\" : \"15 jan\",\r\n        \"end_date\" : \"15 feb\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"rock\",\r\n        \"start_date\" : \"15 jul\",\r\n        \"end_date\" : \"15 aug\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"PolicyMaker\",\r\n        \"start_date\" : \"15 aug\",\r\n        \"end_date\" : \"10 nov\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"race\",\r\n        \"start_date\" : \"10 nov\",\r\n        \"end_date\" : \"31 dec\"\r\n   }]\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movieapi018.herokuapp.com/api/v1/schedule/leapyear",
+					"protocol": "https",
+					"host": [
+						"movieapi018",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"schedule",
+						"leapyear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://movieapi018.herokuapp.com",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://movieapi018.herokuapp.com",
+					"protocol": "https",
+					"host": [
+						"movieapi018",
+						"herokuapp",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://movieapi018.herokuapp.com/api/v1/schedule/year",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":[ \r\n         {\r\n       \"movie_name\" : \"Drive\",\r\n        \"start_date\" : \"1 jan\",\r\n        \"end_date\" : \"15 jan\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"brave\",\r\n        \"start_date\" : \"15 feb\",\r\n        \"end_date\" : \"15 jul\"\r\n   },\r\n     {\r\n       \"movie_name\" : \"bala\",\r\n        \"start_date\" : \"15 jan\",\r\n        \"end_date\" : \"15 feb\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"rock\",\r\n        \"start_date\" : \"15 jul\",\r\n        \"end_date\" : \"15 aug\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"PolicyMaker\",\r\n        \"start_date\" : \"15 aug\",\r\n        \"end_date\" : \"10 nov\"\r\n   },\r\n   {\r\n       \"movie_name\" : \"race\",\r\n        \"start_date\" : \"10 nov\",\r\n        \"end_date\" : \"31 dec\"\r\n   }]\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movieapi018.herokuapp.com/api/v1/schedule/leapyear",
+					"protocol": "https",
+					"host": [
+						"movieapi018",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"schedule",
+						"leapyear"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

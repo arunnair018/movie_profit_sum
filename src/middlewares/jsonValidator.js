@@ -2,6 +2,7 @@ const { body, validationResult } = require("express-validator");
 
 const userValidationRules = () => {
   return [
+    body().notEmpty(),
     body("data").notEmpty().isArray(),
     body("data.*.movie_name").notEmpty().isString(),
     body("data.*.start_date").notEmpty().isString(),
