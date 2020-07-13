@@ -48,7 +48,7 @@ POST
 
 ##### Error Response
 
-##### Sample Call
+##### Sample Request
 
 ```javascript
 var myHeaders = new Headers();
@@ -76,4 +76,29 @@ fetch("http://localhost:5000/schedule/v1/year", requestOptions)
   .then((response) => response.text())
   .then((result) => console.log(result))
   .catch((error) => console.log("error", error));
+```
+
+##### Sample Response
+
+```javascript
+{
+    "movies": [
+        {
+            "movie_name": "Drive",
+            "start_date": "1 jan",
+            "end_date": "15 jan"
+        },
+        {
+            "movie_name": "brave",
+            "start_date": "15 feb",
+            "end_date": "15 jul"
+        },
+        {
+            "movie_name": "PolicyMaker",
+            "start_date": "15 aug",
+            "end_date": "10 nov"
+        }
+    ],
+    "maximum_profit": 3
+}
 ```
