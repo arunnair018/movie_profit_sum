@@ -17,11 +17,14 @@ Returns final list of movies to select along with the maximum profit.
 
 ##### URL
 
-- for a non-leap year
-  `/schedule/v1/year`
+- live base url
+  `https://movieapi018.herokuapp.com`
 
-- for a leap year
-  `/schedule/v1/leapyear`
+* for a non-leap year
+  `/api/v1/schedule/year`
+
+* for a leap year
+  `/api/v1/schedule/leapyear`
 
 ##### Method
 
