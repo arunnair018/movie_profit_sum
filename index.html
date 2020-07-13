@@ -75,6 +75,10 @@
 Content: <code>{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String }], "maximum_profit": Integer }</code></li>
 </ul>
 <h5 id="error-response">Error Response</h5>
+<ul>
+<li>Code: 422<br>
+Content: <code>{ "errors": [{ 	"message": String }] }</code></li>
+</ul>
 <h5 id="sample-request">Sample Request</h5>
 <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span>  myHeaders  <span class="token operator">=</span>  <span class="token keyword">new</span>  <span class="token class-name">Headers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 myHeaders<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span>  <span class="token string">"application/json"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
