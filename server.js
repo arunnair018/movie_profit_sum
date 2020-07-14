@@ -23,7 +23,7 @@ app.use(
 // parse application/json
 app.use(bodyParser.json());
 
-// welcome page
+// welcome page route
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
