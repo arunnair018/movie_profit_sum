@@ -20,11 +20,8 @@ Returns final list of movies to select along with the maximum profit.
 - live base url
   `https://movieapi018.herokuapp.com`
 
-* for a non-leap year
+* endpoints
   `/api/v1/schedule/year`
-
-* for a leap year
-  `/api/v1/schedule/leapyear`
 
 ##### Method
 
@@ -54,7 +51,7 @@ POST
   {
     "errors": [
         {
-            "data[0].start_date": "Invalid value"
+            "message": String
         }
     ]
   }
