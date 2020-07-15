@@ -11,7 +11,7 @@ return result set which is maximum-size subset of non-overlapping movies.
 */
 
 // #######################################
-// Job scheduler funtion for non-leap year
+// Job scheduler funtion 
 // #######################################
 const toDayunit = require("./dayUnit");
 
